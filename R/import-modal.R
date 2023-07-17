@@ -404,7 +404,7 @@ import_modal <- function(id,
                          title = "Import data",
                          size = "l",
                          file_extensions = c(".csv", ".txt", ".xls", ".xlsx", ".rds", ".fst", ".sas7bdat", ".sav")) {
-  showModal(modalDialog(
+  #showModal(modalDialog(
     title = tagList(
       tags$button(
         phosphoricons::ph("x", title = i18n("Close"), height = "2em"),
@@ -414,12 +414,13 @@ import_modal <- function(id,
         `data-bs-dismiss` = "modal",
         `aria-label` = i18n("Close")
       ),
-      title
-    ),
-    import_ui(id, from, file_extensions = file_extensions),
+      title,
+      import_ui(id, from, file_extensions = file_extensions),
     size = size,
     footer = NULL
-  ))
+    )
+    
+  #))
 }
 
 
